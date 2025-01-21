@@ -56,7 +56,8 @@ const dohServers: Array<[string, DNS2.DnsResolver]> = ([
   'wikimedia-dns.org',
   // 'ordns.he.net',
   // 'dns.mullvad.net',
-  'basic.rethinkdns.com'
+  'basic.rethinkdns.com',
+  '198.54.117.10' // NameCheap DNS, supports DoT, DoH, UDP53
   // 'ada.openbld.net',
   // 'dns.rabbitdns.org'
 ] as const).map(dns => [
@@ -242,7 +243,9 @@ const whoisNotFoundKeywordTest = createKeywordFilter([
   ' is free',
   'no object found',
   'nothing found',
-  'status: free'
+  'status: free',
+  'pendingdelete',
+  ' has been blocked by '
 ]);
 
 // whois server can redirect, so whoiser might/will get info from multiple whois servers
